@@ -1,0 +1,20 @@
+network:
+  - dim: 512
+    aggr: 'concat'
+    loss: 'sigmoid'
+    arch: '1-1-0'
+    act: 'relu'
+    bias: 'norm'
+params:
+  - lr: 0.01
+    dropout: 0.1
+    weight_decay: 0.0
+    sample_coverage: 50
+phase:
+  - end: 20         
+    sampler: 'locality_node'
+    size_subgraph: 4500
+locality:
+  - use_locality: False
+  - load_weight: False
+  - dataset: 'amazon'
